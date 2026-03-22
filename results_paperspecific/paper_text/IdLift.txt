@@ -1,0 +1,635 @@
+                                                The IdLift Model: A Brief Description
+                    GENERAL STRUCTURE OF THE I-O TABLE
+                        The input-output table for the IdLift model is a 97 sector commodity by commodity table.  It
+                    is derived from the 1987 Benchmark I-O study using the purification algorithm described by
+                    Almon (1999), with certain redefinitions of sectors.  The first 87 sectors comprise the private
+                    economy, 88 and 89 are government enterprises, and 93 is government industry.  The other
+                    sectors from 90 to 97 are special industries.  The sectoring classification is listed at the back of
+                    this document.
+                    FINAL DEMAND EXPENDITURE COMPONENTS
+                    Categories to be Bridged
+                    •    Personal Consumption Expenditures (92 categories), passed through consumption bridge (97x92)
+                    •    Equipment Investment (55 categories), passed through capital flow matrix (97x55)
+                                                                st
+                    •    Private Construction (25-order, 1  19, plus category 25 are private), passed through construction
+                         bridge (97x25)
+                    •    Federal Defense Consumption and Investment (25 categories), passed through defense bridge (97x25)
+                    •    Federal Nondefense Consumption and Investment (8 categories), passed through nondefense bridge
+                         (97x8)
+                    •    State & Local Education Consumption and Investment (7 categories), passed through education
+                         bridge (97x7)
+                    •    State & Local Health Consumption and Investment (7 categories), passed through health bridge
+                         (97x7)
+                    •    State & Local Other Consumption and Investment (7 categories), passed through other bridge (97x7)
+                    •    Government Construction (5 categories), passed through government structures bridge (25x5), then
+                         passed through construction bridge.
+                    Final Demands by I-O Commodity
+                    •    Personal Consumption Expenditures
+                    •    Producers’ Durable Equipment
+                    •    Private Structures by Commodity
+                    •    Government Structures by Commodity
+                    •    Inventory Change
+                    •    Federal Defense
+                    •    Federal Nondefense
+                    •    State & Local Education
+                    •    State & Local Health
+                    •    State & Local Other
+                    •    Exports
+                    •    Imports
+                    Summary of IdLift                                        1                                                Inforum
+                    Value Added Components (51 industries)
+                    •    Labor Compensation
+                    •      Wages and Salaries
+                    •      Supplements
+                    •         Employer Contributions for Social Insurance
+                    •         Benefits
+                    •            Health Benefits
+                    •            Pension Benefits
+                    •            Other Benefits
+                    •    Return to Capital
+                    •      Corporate Profits
+                    •      Proprietors’ Income
+                    •      Corporate Capital Consumption Allowances
+                    •      Noncorporate Capital Consumption Allowances
+                    •      Corporate Inventory Valuation Adjustment
+                    •      Noncorporate Inventory Valuation Adjustment
+                    •      Net Interest Payments
+                    •      Business Transfer Payments
+                    •      Rental Income of Persons
+                    •      Government Subsidies Less Surplus
+                    •    Indirect Business Taxes
+                    •      Excise and Sales Tax
+                    •      Value Added Tax
+                    •      Energy Tax
+                    •      Other Indirect Tax
+                    Prices
+                    •    Producers’ Prices (97 commodities)
+                    •    Consumer Prices (92 categories)
+                    •    Equipment Investment Prices (55 industries)
+                    •    Construction Prices (25 categories), used for both private and government construction
+                    •    Foreign Price of Imports (97 commodities)
+                    •    Foreign Price of Competing Exports (97 commodities)
+                    •    Federal Defense Deflators (25 categories)
+                    •    Federal Nondefense Deflators (8 categories)
+                    •    State & Local Education Deflators (7 categories)
+                    •    State & Local Health Deflators (7 categories)
+                    •    State & Local Other Deflators (7 categories
+                    Summary of IdLift                                        2                                                Inforum
+                OTHER MATRICES USED IN THE MODEL
+                •   Consumption Bridge Matrix  - This bridge links personal consumption expenditures by 92 consumer
+                    categories to personal consumption at the commodity level, stripping off trade and transportation
+                    margins.  It is also used in the reverse direction to form consumer prices from producers’ prices.
+                •   Investment Bridge Matrix – The investment bridge matrix, or “capital flow table” links investment by
+                    55 purchasing industries to producers’ durable equipment at the commodity level, allocating
+                    expenditures by type of investment good, and stripping off trade and transportation margins.  This
+                    matrix is also used in the reverse direction to form equipment investment prices at the 55 industry
+                    level.
+                •   Construction Bridge Matrix – Links construction by 25 categories of public and private to the 97
+                    commodity level.  It distributes construction expenditures by type of material, as well as allocating
+                    margin expenditures.  Value added for construction is in the new construction row (7).  This bridge
+                    serves double duty, bridging private construction and public construction in two different places in
+                    the model.  It is also used to form private and government construction prices.
+                •   Defense Bridge Matrix – Links defense consumption and investment expenditures by 25 categories
+                    (similar to those found in the national accounts) to expenditures by input-output commodity.  It is
+                    used in the reverse direction to obtain prices by defense expenditure category.
+                •   Nondefense Bridge Matrix – Links federal nondefense consumption and investment expenditures by 8
+                    categories to the commodity level.
+                •   State & Local Education Bridge Matrix – Links 7 categories of education consumption and
+                    investment to the commodity level.
+                •   State & Local Health Bridge Matrix – Links 7 categories of education consumption and investment to
+                    the commodity level.
+                •   State & Local Other Bridge Matrix – Links 7 categories of education consumption and investment to
+                    the commodity level.
+                •   Product to Industry Bridge – Relates commodity value added (97 commodities) to industry value
+                    added (51 industries), and vice-versa.
+                THE REAL SIDE
+                Personal Consumption
+                    The personal consumption equations have been estimated using PADS (the Perhaps Adequate
+                Demand System) for 92 categories of consumption expenditure, divided into 9 groups.  A cross-
+                sectional equation is used to get the impacts of demographic variables and to estimate the Engel
+                curve for each good.  The result of this equation is then used as the “income” term in the time-
+                series equations,
+                    The cross-section equations are of the following form:
+                   *     K         L       G      
+                 Ci =a+ ∑bkYk+∑dlDl∑wgng
+                         k=1      l=1     g=1     
+                                                    
+                    where:
+                    C*=household consumption expenditures on good i
+                      i
+                    Yk=the amount of per-capita income (expenditures) within income category k
+                Summary of IdLift                              3                                        Inforum
+                    Dl = dummy variable used to show membership in the jth demographic group
+                    ng =number of household members in age category g
+                    w =adult equivalency weights
+                      g
+                    K =the number of income groups
+                    L =the number of demographic categories
+                    G=the number of age groups
+                    The demographic categories D include region of residence, family size, working status of
+                spouse, college education, and age of household head, all estimated using dummy variables.  The
+                left-hand side result of this equation is known to us by the name of “C-star”.  The two terms in
+                the first factor of the equation are the “piecewise linear Engel curve” and the demographic term.
+                The second factor of this equation is the age-weighted population.
+                    The PADS equations take the form:
+                                                                       −          −         −
+                                                            λ           λksk       µG       νG
+                                  *          *   p  i n  p        p       p 
+                                Cc         Cc       i        i        i       i 
+                 x (t) = a (t) +b        +c∆               ∏
+                  i      i     i   P    i     P      k=1                      
+                                                 P        p          p         p
+                                                                   k        G  g
+                    where:
+                         C*=cross-section expenditures for corresponding cross-section category c
+                           c
+                         P=overall consumption price index
+                         p =the price of good i
+                           i
+                         p =the average price index of group G
+                           G = the average price of subgroup g
+                         p
+                           g
+                         λi=individual good price response parameter
+                         µG=group price response parameter
+                        νg =subgroup price response parameter
+                Exports
+                    The Inforum bilateral trade model (BTM) forecasts bilateral trade flows for 120 commodities,
+                by 14 trading partners and two regions covering the rest of the world.  The forecasting equations
+                are based on annual OECD and UN data on international trade by commodity and country of
+                origin.  For 13 of the trading partners, Inforum models are available, which forecast imports and
+                domestic prices endogenously.
+                    As an alternative to taking exports exogenously from BTM, we have also estimated export
+                equations similar to those used in the previous Inforum international system.  The form of these
+                export equations is:
+                Summary of IdLift                               4                                       Inforum
+                                                                                                                                           d η
+                                                                                                15 w m  p 
+                                                           E =b +b∑ k kit it
+                                                                 it              0           1k=1          m  f
+                                                                                                                 ki0                p
+                                                                                                                                          it 
+                                                           where:
+                                                                          Eit = U.S. exports of commodity i for year t
+                                                                          w =the fraction of U.S. imports which went to trading partner k in the base year (1987)
+                                                                               k
+                                                                         mkit = imports to country k for commodity i in year t
+                                                                         mki0 = imports to country k for commodity i for the base year
+                                                                           p =a moving average of the domestic price
+                                                                               it
+                                                                           f it = a moving average of a weighted exchange rate adjusted price of competing
+                                                exporters.
+                                                          In contrast to the older LIFT equations of this form, these equations were all estimated with
+                                                data from the BTM database,  and the forecasts from BTM are still used to obtain the foreign
+                                                import demands and foreign prices.  However, this form allows the IdLift equations to adjust
+                                                independently from BTM.  These equations, like all others in the model, can be turned on or off.
+                                                Equipment Investment
+                                                          IdLift forecasts purchases of equipment investment for 55 industries comprising the U.S.
+                                                economy.  Sales of investment goods at the 97 commodity level are then determined by passing
+                                                equipment investment by buyer through the investment bridge matrix. The investment equations
+                                                are estimated in a two-stage, three equation framework.  Factor demands for equipment capital,
+                                                labor and energy are estimated simultaneously.  In the first stage, optimal capital-output, labor-
+                                                output and energy-output ratios are estimated.  In the second stage, the parameters from the first
+                                                stage are treated as fixed, and equations for net investment, labor and energy are estimated.  In
+                                                this stage, investment is based upon a distributed lag on past changes in output, whereas labor
+                                                and energy demand are based upon a distributed lag of levels of output.
+                                                          The first stage equation for the optimal capital-output ratio is obtained by using Shephard’s
+                                                Lemma with a generalized Leontief cost function with equipment, labor and energy to obtain:
+                                                                                  *                                                                                        1
+                                                               K                                                                                    pj 2
+                                                                                              −            +
+                                                                            =e aK1t1 aK2t2 ∑ bKj                                                                     
+                                                               Q                                                       j=K,L,E                      p  
+                                                                                                                                                               K
+                                                                               t                                                                                       
+                                                                                                                                                                             
+                                                          where:
+                                                                          K =capital stock
+                                                                         Q=output
+                                                                                          *
+                                                                         K  =the optimal capital-output ratio
+                                                                                      
+                                                                         Q
+                                                                                      
+                                                                                          t
+                                                                           pj = price of factor j, where j = K, L, E
+                                                Summary of IdLift                                                                                                                             5                                                                                                                         Inforum
+                             t =time trend
+                              1
+                                   nd
+                             t =2  time trend, starting in 1970
+                              2
+                       This equation is used in a three equation system to fit the historical capital-output, labor-
+                   output and energy-output ratios.
+                       The equation for net investment is derived from the first difference of the optimal capital
+                   stock equation and can be expressed by:
+                                                            1
+                               −    +                pj 2 3
+                           =e aK1t1 aK2t2  ∑              ∑ K∆Q
+                       Nt                        bKj            wj      t− j
+                                         j=K,L,E     pK  j=0
+                                                             
+                                                             
+                       where:
+                             Nt = net investment
+                             ∆Q=the change in output
+                       The price of capital  p is the commonly used neoclassical measure:
+                                                   K
+                              p (r +dep)(1−tz−C)
+                        p = eq
+                          K            1−T
+                       where:
+                              p =the equipment price deflator for this purchasing industry
+                               eq
+                             r = the real AAA bond rate
+                             dep= the average depreciation rate for this industry
+                             T=the effective corporate tax rate
+                             z = the present value of depreciation of one dollar worth of investment
+                             c = the investment tax credit
+                       Replacement investment is determined by multiplying the optimal capital output ratio by the
+                   losses to capacity (as the level of optimal output given the current capital stock) occurring in the
+                   current year.  Since the optimal capital-output ratio is a function of relative prices, price change
+                   affects both the demand for net investment and replacement investment.
+                   Private Construction by Type
+                       The equations for private purchases of plant and other structures are for 19 categories of
+                   construction available from the National Income and Product Accounts.  These purchases are
+                   generally aggregated into two major divisions.  Residential construction consists of single- and
+                   multi-family homes, and additions and alterations.  Non-residential construction is comprised of
+                   a motley of different types: hotels, industrial buildings, office buildings, schools, farm buildings,
+                   oil wells, railroads, telephone and communications, electric and gas utilities, and petroleum
+                   Summary of IdLift                                       6                                              Inforum
+                             pipelines.  The residential equations are estimated in per-capita form, and based on disposable
+                             income per capita, the mortgage interest rate, and the percent of households of home-buying age.
+                             The non-residential constructions are each unique, but often based on the output of the related
+                             industry or group of industries, the relative price of the related industry (especially in the case of
+                             oil and drilling rigs), interest rates, and a variety of demographic variables.  Some of the
+                             equations also use a measure of capital stock of structures of that type, to model replacement
+                             investment needs.
+                             Government Consumption and Investment
+                                   Only consumption purchases are included in the presentation of the government budget.
+                             However, investment is accumulated into a book value stock, and the depreciation of this stock is
+                             the capital consumption of government.  This capital consumption is part of current consumption
+                             expenditures.
+                                   IdLift has an accounting for the government capital stock, and capital consumption equations
+                             that relate capital consumption to the calculated depreciation from this stock.  This capital
+                             consumption is part of the current government budget, and also shows up in the non-corporate
+                             capital consumption vector in the income side of the model.
+                                   Aside from capital consumption, the other categories of government consumption and
+                             investment are exogenous.  There are five categories of government spending: federal defense,
+                             federal nondefense, state & local education, state & local health and state & local other.  For
+                             each category, there is a bridge that translates purchases by type to purchases by input-output
+                             commodity.  For example, the bridge for federal defense spending has 97 rows and 25 columns.
+                             Output Calculation
+                                   To calculate output by industry, the sources of demand by commodity arising from personal
+                             consumption, equipment investment, structures investment, government and exports are first
+                             added together to form a vector of final demand.  Then the Seidel iterative technique is used to
+                             jointly solve for domestic output, imports and inventory change by industry.
+                                   The Seidel algorithm in IdLift solves by iteratively calculating
+                                                          k+1+                k +     −       +
+                                               ∑aq ∑aq v m d
+                                       k+1     j<i    ij   j       j>i   ij   j      i       i      i
+                                    q =
+                                      i                              1−a
+                                                                             ii
+                                   where:
+                                            qk= the solution for output of commodity i in iteration k
+                                               i
+                                            aij =the direct input-output coefficient from commodity i to commodity j
+                                              f i = the sum of final demand for commodity i excluding imports, inventory change, and
+                             discrepancy
+                                            vi = inventory change for commodity i
+                                            mi =imports for commodity i
+                             Summary of IdLift                                                                     7                                                                        Inforum
+                         di= final demand discrepancy for commodity i
+                    A triangulation ordering typically optimizes the loop over commodities, so that the solution is
+                as recursive as possible.  Within the loop for each commodity, the equations for inventory
+                change and imports are also calculated.
+                    One complication is the final demand discrepancy, which is the approach we have taken to
+                handle the inconsistencies between input-output tables, final demand data and output data.  The
+                discrepancy d is formed in the last year of output data as d = q – Aq – f – v + m, where d is the
+                final demand discrepancy,  q is output,  A  is the direct requirements matrix,  f is other final
+                demand, and v is inventory change and m is imports.  In the forecast periods, the discrepancy is
+                kept constant, and added back in during the Seidel solution.
+                    The import equations are based on domestic demand, calculated in the regressions as dd = q +
+                m – x , where dd is domestic demand, and x is exports.  However, when solving for imports, m
+                and q are still unknown, so we use instead dd = Aq + f           + v + d, where q is the best current
+                guess of output for the current iteration.
+                Inventory Change
+                    The form of the inventory equations is:
+                    vi = β + β USEi+β ∆USEi
+                          0    1         2
+                    where:
+                         USE =q(1−a )+m −v
+                              i   i     ii   i   i
+                Labor Productivity, Average Hours Worked and Employment
+                    The labor productivity equations we use can be written as:
+                    lnq =     +      +     +    qup+    qdown
+                       h β0 β1t1 β2t2 β3             β4
+                         
+                    where:
+                         q = output
+                         h = hours worked
+                         t =a simple linear time trend
+                          1
+                         t2 = a second time trend, starting in 1972
+                         qup=dq, when positive, 0 otherwise
+                         qdown= −dq, when dq negative, 0 otherwise
+                         dq= lnq −lnqpeak
+                                 t           t−1
+                         qpeak = q , if q >qpeak (1−spill) , otherwise = qpeak (1−spill)
+                                t   t      t         t−1                             t−1
+                         spill = depreciation rate of capacity, both in the sense of capital and “hoarded” labor
+                Summary of IdLift                               8                                       Inforum
+                                                   The second time trend picks up a change in the rate of labor productivity growth that began
+                                          sometime in the 1969 to 1973 period.  The qup and qdown terms model the increase in labor
+                                          productivity that is observed in periods of increasing output, and vice-versa.  This phenomenon
+                                          of procyclical labor productivity is sometimes associated with “labor hoarding”, where firms
+                                          retain trained workers in periods of slack output.  When output increases again, they put the
+                                          hoarded labor back to work before making new hires.   The qpeak variable attempts to measure
+                                          capacity output, both in the sense of capital and “hoarded” labor.
+                                                   The equations for hours worked relate annual hours worked per employee to a time trend and
+                                          cyclical changes in output, much like the labor productivity equations.  Therefore, they are also
+                                          essentially time trends.
+                                                   Hours worked by industry can be obtained by dividing output by productivity.  Then
+                                          employment by industry is simply total hours divided by average hours worked per employee.
+                                          This yields hours and employment for all industries comprising the private economy.  Public
+                                          sector employment, domestic employment and rest of world employment are specified
+                                          exogenously.
+                                          THE PRICE-INCOME SIDE
+                                          Hourly Labor Compensation
+                                                   In the price-income side of the model, the wage equations are really the backbone, for labor
+                                          compensation comprises the largest share of income, and the most significant contributor to the
+                                          core inflation rate is wage inflation.  It is perhaps appropriate that it is here that we introduce the
+                                          growth of money into the model, as the long-run determinant of average inflation.
+                                                   The wage equations in IdLift are estimated in a stacked system, and the left-hand side variable
+                                          is the percent change in the hourly labor compensation in each industry.  An alternative
+                                          formulation, used in LIFT, which we plan to test against the current version, is to estimate a
+                                          relative wage equation.  In this specification, an equation is estimated for the aggregate wage,
+                                          and then the sectoral wage equations are estimated as ratios of the sectoral wage over the
+                                          aggregate wage.
+                                                   The wage equations are estimated as:
+                                                    dw=β pj+β dlp +β supply
+                                                            i            1                  2i           i           3i
+                                                   where:
+                                                                dwi = ln(wag )−ln(wag                                                    ) , and  wag  is the labor compensation rate for industry i
+                                                                                                    it                            i,t−1                                   i
+                                                                 pj =a five-year weighted average of the percent change in the growth of M2/real GNP
+                                                                 supply= ([ pc( p ) − pc( pgnp)] +[ pc( p ) − pc(pgnp)]) /2, the average difference of the rate of
+                                                                                                        ag                                                      oil
+                                                                                     price change in agriculture and crude petroleum with respect to GNP inflation
+                                                                dlp =ln(q /                             ) − ln(q                  /            ) , the percent change in industry labor productivity
+                                                                                                  h                                 h, −1
+                                                                          i                 it        it                  i, t −1       i t
+                                          The stacked system estimation imposes the same coefficient on the  pj variable across all
+                                          industries, letting the parameters of the other variables differ by industry.  Although the main
+                                          Summary of IdLift                                                                                                            9                                                                                                         Inforum
+                motive of introducing the monetary aggregate into this equation is to provide a mechanism
+                whereby money affects prices, there is also a rationale supported by anecdotal evidence.  This
+                evidence suggests that when the money supply increases more rapidly, it stimulates aggregate
+                demand.  This creates pressure in the labor markets, which puts upward pressure on wages.  An
+                alternate story is the rational expectations version, that workers bid up wages in expectation of
+                the higher inflation which they know will be generated by the money supply growth.
+                Profits
+                   The profits equations are another very important part of the income side of the model.
+                Corporate profits are a large and volatile component of value added by industry.  The equations
+                are based on profits as a mark-up over labor compensation, with a response to variables
+                representing both demand and cost changes affecting the markup rate.  The data available from
+                the Gross Product Originating (GPO) is corporate profits before tax, with no capital consumption
+                allowance adjustment, and no inventory valuation adjustment.  For the equations, these two
+                variables are added to profits before tax to get a measure that is more of an economic measure of
+                costs than a purely accounting measure.  Formally:
+                                       CCC
+                   Π =CPR +IVA +           i   CCADJ
+                     i      i     i  CCCSUM
+                   where        Πi = economic profits
+                                CPR  = corporate profits before tax
+                                    i
+                                IVA    = inventory valuation adjustment
+                                   i
+                                CCC  = corporate capital consumption allowance
+                                    i
+                                CCCSUM  = aggregate corporate capital consumption allowance
+                                CCADJ  = aggregate capital consumption allowance adjustment
+                   The ratio in the last term is used because the capital consumption adjustment is not available
+                by industry.  The dependent variable in the equations is the ratio of economic profits to labor
+                compensation for each industry.
+                   Corporate profits depend on both changes in demand and changes in unit costs.  The demand
+                effect is measured by bot industry-specific and aggregate measures of demand.  The industry-
+                specific variable is the change in output.  The aggregate measure is a measure of the tightness in
+                the labor market, the ratio of the natural rate of unemployment to the actual rate of
+                unemployment squared.  The input cost variable is the unit intermediate cost per unit of output.
+                The general form of the profits equations is:
+                     Πi  = f (PCOUT ,PCOUT      ,GNPGAP,NAUNSQ,PCUC ,PCUC          , PCOIL,PCAG)
+                    LAB             it       i,t−1                       it      i,t−1
+                        i
+                   where
+                        PCOUT = the percent change in industry output
+                        GNPGAP = the GNP gap (         GNP *100 )
+                                                     POTGNP
+                Summary of IdLift                            10                                      Inforum
+                                     NAIRU 2
+                        NAUNSQ =  UN  , where NAIRU is the natural rate of unemployment, and UN is the
+                                            
+                actual rate
+                        PCUC = percent change in unit intermediate cost
+                        PCOIL = percent change in oil prices
+                        PCAG = percent change in agricultural prices
+                   Note that not all variables will appear in every equation.  In particular, we will choose either
+                the GNPGAP or the NAUNSQ variable, as they are both measures of tightness in the aggregate
+                economy.
+                Proprietors Income
+                   Proprietor income by industry, or noncorporate profits, the returns to entrepreneurs by
+                industry.  For the few industries in which proprietors income is large, it appears to be linked to
+                the average level of labor compensation.  Many of the equations relate proprietors income to the
+                average level of labor compensation over the past three years.  Some additional variables used in
+                the other equations are: percent change in GDP, industry change in output, the industry capital-
+                output ratio, and the square of the ratio of the natural rate of unemployment to the actual rate.
+                Capital Consumption Allowances
+                   Capital consumption allowances, or depreciation, comprise a fairly large share of total value
+                added.  The IdLift model contains separate sets of equations for corporate and noncorporate
+                capital consumption allowances.  Although the capital consumption allowances calculated by the
+                BEA differ from accounting measures of depreciation, they still appear to be closely related to a
+                capital stock that would be formed by cumulating nominal values of investment.  The equations
+                for capital consumption are fairly simple, and for most industries, fit very well.  The explanatory
+                variables are nominal stocks of equipment and structures capital.
+                Producers’ Prices
+                   One way of calculating prices is to forecast value added per unit of output, or value added
+                directly, and then calculate prices through the second fundamental input-output identity:
+                         p’ = p’A + v
+                   An alternative approach is to forecast wages, then forecast prices as markups over wages plus
+                intermediate costs, and then determine the sum of the other categories of value added as a
+                residual.  Frecasts of profits, proprietors’ income and capital consumption allowances are then
+                scaled into consistency with the price forecast.  Both versions of the price income model are
+                present in IdLift, and can be switched in or out. The price equations are markup equations, which
+                are estimated as:
+                    mrkup =β +β gnpgap+β pcgap +β pcgap +β pcq +β pcq +β p +β p
+                           it   0    1        t    2       t   3       t−1   4     t   4    t −1  5  ag   6  oil
+                   where:
+                Summary of IdLift                             11                                      Inforum
+                                                                                                                                      p
+                                                                         mrkup =                                                           it                             , the ratio of price over unit labor costs plus unit
+                                                                                                it        (                /q )+∑                            pw
+                                                                                                            lab                                     a
+                                                                                                                       it         it                     ij            i
+                                                                                                                                               i
+                                                intermediate cost
+                                                                          gnpgap =as described above
+                                                                                                    t
+                                                                           pcgap = percent change in GNP gap
+                                                                                                t
+                                                                           pcqit = percent change in output of commodity i
+                                                                           p =agriculture price
+                                                                               ag
+                                                                           p =crude oil price
+                                                                               oil
+                                                                           pw=average of domestic and import prices (weighted by import share)
+                                                                                    i
+                                                          Therefore, both an aggregate variable (GNP gap) and an industry variable (change in output)
+                                                are used in explaining price, as well as the raw materials supply price variables, which are
+                                                significant in explaining the increase in inflation stemming from major supply shocks.
+                                                 The Product-Industry Bridge
+                                                          The input-output table and the vectors of final demand expenditures are compiled for the
+                                                model at the 97 commodity level.  However, the categories of value added are compiled for 51
+                                                industries.  When value added is used to calculate prices using the equation  p'= p'A+v, it must
+                                                first be converted to the commodity level, which is basis of the A matrix and the price vector.  If
+                                                the price equations are used, or if prices are fixed exogenously, then industry value added must
+                                                be modified so as to be consistent with these commodity prices.  For these purposes and others,
+                                                we make use of the product to industry bridge.
+                                                          The product-industry bridge is derived from the make matrix, which in the case of Idlift has
+                                                51 rows (industries) and 97 columns (commodities).  The bridge is stored and updated in flows,
+                                                which enables converting in both directions.
+                                                          In the base year, which we designate as year 0, the following relationship holds:
+                                                                                                 0     V0
+                                                                               ∑ g                           ij       =                0 , for all j commodities
+                                                                                                i                0         vaaj
+                                                                         i∈industry                 ∑Vij
+                                                                                                       i
+                                                          where:
+                                                                          g0 =the total vector sum of 13 categories of value added by industry, including a
+                                                                                                discrepancy column, so calculated to that the above relationship holds
+                                                                         V0=the product-industry bridge matrix for the base year
+                                                                         vaa=the commodity level vector of value added allocated.  In the base year, this is the
+                                                                                                vector of value added in the input-output table, which satisfies the fundamental
+                                                                                                identities
+                                                Summary of IdLift                                                                                                                           12                                                                                                                          Inforum
+                                An important concept to grasp is that of real value added weighted output, or revawo.  Denote
+                           the ratio          0 /   0 the value-added fraction.  This is the share of total output of commodity j in the
+                                           Vij qj
+                           base year, accounted for by output produced in industry i.  To transfer output through the bridge,
+                           we multiply each output by its value added fraction, and distribute the result to the various
+                           industries in their proportion to that commodity in the base year.  The result is revawo, and may
+                           be written:
+                                                               V0 t
+                                        revawot = ∑               ij q
+                                                      i           0     j
+                                                             j  qj
+                                In the years beyond the base year, the V matrix is updated as follows:
+                                                         t         t
+                                        Vt =V0 qj                gi
+                                            ij      ij   0               t
+                                                      qj revawoi
+                                In this equation  gt is the sum of industry value added plus the value added discrepancy
+                                                                  i
+                           column.  This equation adjusts the bridge matrix so as to prorate each industry’s value added
+                           back to products in accordance with that product’s contributions to the industry  revawo.  To
+                           obtain value added by product we then just sum down the column of the updated bridge.
+                                If prices are forecast directly, as we are currently doing, we first calculate commodity value
+                           added from prices and intermediate cost and price discrepancy:
+                                        vaa = p q −∑pwa q −pdisc
+                                                j       j   j    i        i   ij  j               j
+                                where:
+                                         pw=the weighted foreign and domestic price
+                                              i      = the price discrepancy, calculated as p’ – p’A – v in the last year of price data
+                                         pdisc
+                                                    j
+                                Next the vaa vector is passed through the bridge in the reverse direction to obtain value added
+                           by industry.  Finally, several components of value added are scaled so that total value added by
+                           industry is equal to the desired total.  These components are corporate profits, proprietor’s
+                           income, and corporate and non-corporate consumption allowances.
+                           THE ACCOUNTANT
+                                Even if forecasting the prices directly we still need to develop consistent estimates of the
+                           other components of income besides labor compenstion.  Rental income, interest income,
+                           proprietor’s income and that part of profits paid out as dividends all contribute to personal
+                           income.  Corporate profits taxes and indirect business taxes contribute to the revenue of
+                           governments.  Capital consumption allowances and retained earnings are part of business
+                           savings, which is an important component of national savings.  It is the job of the Accountant to
+                           aggregate the components of value added on the price income side and obtain the aggregate
+                           variables needed to state the relationships between GNP, national income, personal income and
+                           disposable income.  Along the way, the important components of the household and government
+                           Summary of IdLift                                                           13                                                                  Inforum
+        balance sheets are obtained.  The Accountant also forms aggregates of the expenditure vectors on
+        the real side of the model, and forms implicit deflators from current and constant price
+        aggregates.
+          The operation of the Accountant can be viewed in several stages.  In the first stage, several
+        aggregates of income are created from the price-income side, and summed to form nominal
+        GNP.  Factor imports are added and factor exports subtracted to obtain GDP.  Supplements to
+        labor compensation such as employer contributions are first aggregated across industries and
+        then distributed to different funds based on exogenous ratios.  Components of other labor income
+        are also calculated in this stage.  The second stage computes capital consumption adjustments,
+        and forms proprietor’s income, rental income and profits with and without capital consumption
+        adjustments and inventory valuation adjustments.  In the third stage, national income is formed
+        by summing labor compensation, proprietor’s income, rental income, corporate profits and
+        interest income.  Corporate profits, net interest and contributions for social insurance are
+        subtracted, and transfer payments, personal interest income, personal dividend income, and
+        business transfer payments are added back in to obtain personal income.  This stage is quite
+        lengthy due to a detailed set of identities and regression equations calculating the different
+        components of transfer payments and interest payments.  In the fourth stage, the components of
+        federal and state and local receipts and expenditures are calculated.  In the fifth and final stage,
+        personal taxes and non-tax payments are removed to obtain disposable income.  At this point, the
+        loop in the model has been closed, and it returns to the real side, with the new guess at
+        disposable income.
+        SEVERAL IMPORTANT MACRO EQUATIONS
+         The Personal Savings Rate
+          This equation has gone through many revisions since the first version of the model.  Common
+        variables used were the unemployment rate, usually with a coefficient of close to –1, and the
+        share of motor vehicles in personal consumption, also with a coefficient of –1.  The argument for
+        using motor vehicles share was that consumers may view purchases of consumer durables
+        generally as a substitute for savings. The reason for using the unemployment rate is to introduce
+        an automatic stabilizer in the model.
+          The current equation is rather simple,
+             savrat = β 0+ β1(gnpgap−100)+β2rtb+ β3dummy
+          where:
+            rtb = the treasury bill rate
+            dummy =a dummy variable starting in 1986
+          The parameter  β1is constrained to be about .75.  The dummy variable takes the value 1 after
+        1986, when a significant decrease in the U.S. personal savings rate was observed.  Despite its
+        importance in the structure of the model, the savings rate equation is in trouble.  The U.S. has
+        recently seen a personal savings rate become negative.  The economy is very strong now, so this
+        would usually be a cause for the savings rate to be higher.  However, there has always been
+        Summary of IdLift      14                   Inforum
+        something problem of direction of causality in our specification of the savings equation.  In the
+        current U.S. situation, something is making consumer spending very strong, and this is both
+        stimulative to the economy, as well as resulting in negative measured savings.  It could be the
+        wealth effect from the strong stock market, or the price effect of cheap imports, but any of our
+        traditional forms of savings rate equation cannot explain the current phenomena.  As soon as the
+        savings rate equation rate in the model comes into action, the savings rate jumps up about 7
+        points, and therefore, this is a variable which needs to be modified in the first few years of the
+        forecast.
+        Interest Rate Equations
+         Interest rates are important to the expenditure side of the model, in that they affect
+        construction and equipment investment, the most cyclical components of expenditure.  Previous
+        versions of the model had interest rates in the personal consumption equations as well, and we
+        intend to revisit this specification.  Interest rates are also important in the income side of the
+        model, where they affect net interest income, and in various other variables, such as interest paid
+        by federal and state and local governments, and consumer payments of interest to business.
+         The two most important interest rates are the short- and long-term Treasury bill rates.  The
+        short-term rate, or 3-month Treasury bill rate, has the following equation:
+          rtb = β0 + β1expinf + β 2 grmbase+ β 3(gnpgap[1] −100)+ β 4 funds
+         Where:
+            expinf = ”Expected” inflation, formed as a three-year average of inflation
+            grmbase =Percent change in the real monetary base
+            gnpgap[1]−100= Percentage of actual GNP over potential GNP
+            funds = The share of equipment investment, structures investment plus the federal deficit
+        over GNP
+         The expected inflation rate illustrates the Fisher effect, where expected increases in inflation
+        tend to get translated into higher nominal interest rates.  The base money growth variable is
+        especially effective in predicting interest rates over the last several years.  Since 1990, the
+        monetary base has been growing fairly quickly, whereas M2 has been growing slowly.  The GNP
+        gap variable is used to pick up cyclical demand effects on interest rates.  The last variable, called
+        funds, is intended to capture financial market demand pressure on interest rates.  Higher values
+        of this variable indicate a higher demand for finance.  The equation for the long-term Treasury
+        bill rate includes the short-term rate, expected inflation, and the  funds variable.  The other
+        interest rate variables are the commercial paper rate, the mortgage rate, and the AAA bond rate.
+        The first two are regressed directly on the long-term rate, and the bond rate is regressed on the
+        long-term rate and the share of profits in GNP.
+        Summary of IdLift     15                 Inforum

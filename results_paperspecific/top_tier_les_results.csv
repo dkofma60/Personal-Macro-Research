@@ -1,0 +1,15 @@
+equation,term,coef
+non_durables,gamma_subsistence,2.940341696651934e-16
+non_durables,beta_marginal_budget_share,0.028970473254907522
+consumer_services,gamma_subsistence,5.2913635120513284e-14
+consumer_services,beta_marginal_budget_share,0.026384732998860152
+utilities_public_services,gamma_subsistence,0.9612831501972067
+utilities_public_services,beta_marginal_budget_share,0.008020362450750749
+housing,gamma_subsistence,5.835261479181856e-25
+housing,beta_marginal_budget_share,0.04014010676355074
+transportation,gamma_subsistence,2.6594434362477943e-06
+transportation,beta_marginal_budget_share,0.015036017643254736
+leisure,gamma_subsistence,1.4369272205479925e-46
+leisure,beta_marginal_budget_share,0.8814483068886761
+system,objective,19928346476.513573
+system,converged,1.0

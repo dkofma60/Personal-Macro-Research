@@ -1,0 +1,1 @@
+weighted_mean_ge_approx=-1.803557

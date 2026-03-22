@@ -1,0 +1,23 @@
+[2026-03-14 15:23:20] Starting paper-specific revised pipeline.
+[2026-03-14 15:23:20] Writing pipeline audit docs.
+[2026-03-14 15:23:20] Processing CEX extended dataset for paper-specific blocks.
+[2026-03-14 15:23:25] Writing paper-specific category crosswalks.
+[2026-03-14 15:23:26] Estimating top-tier QUAIDS/AIDS/LES.
+[2026-03-14 15:23:37] Estimating LES comparator.
+[2026-03-14 15:23:46] Bootstrapping QUAIDS weighted mean (30 reps).
+[2026-03-14 15:24:35] Bootstrap replicate 10/30
+[2026-03-14 15:25:20] Bootstrap replicate 20/30
+[2026-03-14 15:26:03] Bootstrap replicate 30/30
+[2026-03-14 15:26:04] Running Döpper-inspired modular diagnostics.
+[2026-03-14 15:26:04] Building bridge matrix in Inforum/IdLIFT style.
+[2026-03-14 15:26:05] Estimating grouped PADS analogue.
+[2026-03-14 15:26:06] Computing GE realized elasticities for top_tier.
+[2026-03-14 15:26:06] Computing GE realized elasticities for grouped PADS demand.
+[2026-03-14 15:26:16] Estimating LES comparator.
+[2026-03-14 15:26:42] Paper-specific revised pipeline completed successfully.
+[2026-03-14 16:40:08] Estimating LES comparator.
+[2026-03-14 16:42:25] Estimating LES comparator.
+[2026-03-14 16:43:12] Estimating LES comparator.
+[2026-03-14 16:43:55] Estimating LES comparator.
+[2026-03-14 16:44:46] Estimating LES comparator.
+[2026-03-14 16:45:38] Estimating LES comparator.

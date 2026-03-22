@@ -1,0 +1,40 @@
+paper,highlight
+jorgenson_slesnick_2008,"rank two: We combine expenditure data for over 150,000 households                   function generates demand functions with rank two in the sense"
+jorgenson_slesnick_2008,rank three: mation from the Consumer Price Index (CPI) between 1980 and                  function proposed by Lewbel (2001) has Gorman rank three. We
+jorgenson_slesnick_2008,exact aggregation: is consistent with exact aggregation as originally defined by                                 The first order conditions for this optimization yield Euler
+jorgenson_slesnick_2008,translog: important components of general equilibrium models that are                      We employ a generalization of the translog indirect utility
+jorgenson_slesnick_2008,full expenditure: full expenditureisallocatedovertimesoastomaximizealifetime                                             F         D(ρ)      p      pp             pp        F
+jorgenson_slesnick_2008,leisure: Leisure
+shojaeddini_2021,"six top-tier categories: consumer demand for the six top-tier categories: non-durables, consumer services, housing, utilities and"
+shojaeddini_2021,"QUAIDS: Almost Ideal Demand System (QUAIDS) to estimate consumer demand for food (Härkänen, et al., 2014;"
+shojaeddini_2021,"AIDS: Almost Ideal Demand System (QUAIDS) to estimate consumer demand for food (Härkänen, et al., 2014;"
+shojaeddini_2021,LES: literature. While there are several examples of CGE models that specify a more flexible consumer
+shojaeddini_2021,iterated linear least-squares: budget share equation is estimated simultaneously for all categories using an iterated linear least-squares
+shojaeddini_2021,after-tax wage: facilitate the calculation of after-tax wages and leisure values in our study. Interview surveys are designed
+shojaeddini_2021,"vehicle service flow: vehicle purchases with their vehicle service flow based on Slesnick (2001). Specifically, we define the"
+shojaeddini_2021,Heckman: Heckman correction model and vehicle services estimates. This makes the imputation process the same for various
+shojaeddini_2021,"Geary: system is LES (Geary, 1950; Stone, 1954). Non-linear Engle curves correspond to a rank three demand"
+doepper_2024_w32739,random coefficients: Our models feature the random coefficients logit demand system that is standard in indus-
+doepper_2024_w32739,scanner: ScannerData. WeaggregateacrossUPCstoconstructquantitiesandunitizedpricesofproducts
+doepper_2024_w32739,product categories: demand and Nash-Bertrand pricing for more than 100 consumer product categories—such as
+doepper_2024_w32739,price endogeneity: ance restrictions approach of MacKay and Miller (2023) to resolve price endogeneity. Because
+doepper_2024_w32739,"covariance restriction: the covariance restrictions approach requires the joint estimation of supply and demand, the"
+lift_methodology,bridge matrices: the dynamics of the economy’s adjustment pro-           bridge matrices to convert final demand to the
+lift_methodology,input-output production identity: in an input-output production identity to calcu-                                               an indicator of commodity prices:
+lift_methodology,"price identity: tory change, exports and imports, and govern-                                                  The fundamental input-output price identity then"
+lift_methodology,"make matrix: by purchasing industry, structures by type, inven-                                             production commodities using a make matrix."
+idlift,Consumption Bridge Matrix: •   Consumption Bridge Matrix  - This bridge links personal consumption expenditures by 92 consumer
+idlift,PADS: The personal consumption equations have been estimated using PADS (the Perhaps Adequate
+idlift,piecewise linear Engel curve: the first factor of the equation are the “piecewise linear Engel curve” and the demographic term.
+idlift,final demand discrepancy: di= final demand discrepancy for commodity i
+wp01002,p’ = p’A + v: p’ = p’A + v
+wp01002,"product-industry bridge: passed through the product-industry bridge, to obtain value added by product.  This product-"
+wp01002,value added discrepancy: In this equation gtis the sum of industry value added plus the value added discrepancy
+wp01002,PADS consumption equations: ConsumptionEquations.padsf()  // PADS consumption equations
+wp01004,"consumption bridge matrix: accounts.  For example, in the U.S. accounts, there is a consumption bridge matrix, which we shall call D,"
+wp01004,"columns of the bridge matrix sum to unity: of dimension   by        .  The columns of the bridge matrix sum to unity, and the bridge is used both to translate"
+wp01004,"price discrepancy: However, the use of the price discrepancy means that nominal personal consumption expenditures by"
+chao_1991,Piecewise Linear Engel Curve: Piecewise Linear Engel Curve (PLEC) fo r each o f the 61  cross-section consum ption
+chao_1991,cross-section prediction: C*lt  = cross-section prediction o f consum ption on good  1 in  year t
+chao_1991,weighted population: Weighted Populations                                                                                                                                                                                    ...
+chao_1991,C*: This use o f the population to ta ls  to  c o n s tru c t C* w as possible because o f the
