@@ -12,10 +12,10 @@ import numpy as np
 import pandas as pd
 
 
-ROOT = Path("/Users/danie/Personal-Macro-Research")
-BASE = ROOT / "results_paperspecific"
-OLD = ROOT / "results"
-OUT = ROOT / "results_high_plausibility"
+ROOT = Path(__file__).resolve().parents[1]
+BASE = ROOT / "SWMIRPE_results_paperspecific"
+OLD = ROOT / "SWMIRPE_results"
+OUT = ROOT / "SWMIRPE_results_high_plausibility"
 RUN_LOG = OUT / "run_log.txt"
 
 
@@ -1094,7 +1094,7 @@ def main() -> None:
     else:
         write_markdown(
             OUT / "duplicate_removal_log.md",
-            "# Duplicate Removal Log\n\n- No removable duplicate files detected across `results_high_plausibility` and `results_paperspecific`.",
+            "# Duplicate Removal Log\n\n- No removable duplicate files detected across `SWMIRPE_results_high_plausibility` and `SWMIRPE_results_paperspecific`.",
         )
         log("No removable duplicate files detected across output locations.")
 

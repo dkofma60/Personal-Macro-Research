@@ -31,7 +31,7 @@ except ImportError:
     from PIL import Image, ImageEnhance, ImageFilter, ImageOps
 
 
-ROOT = Path.cwd()
+ROOT = Path(__file__).resolve().parent
 INPUT_ROOT = ROOT / "fraser_g6_releases"
 if not INPUT_ROOT.exists() and (ROOT / "fraser_g6_issues").exists():
     INPUT_ROOT = ROOT / "fraser_g6_issues"

@@ -20,10 +20,10 @@ import statsmodels.api as sm
 from scipy.optimize import minimize
 
 
-ROOT = Path("/Users/danie/Personal-Macro-Research")
-DATA_DIR = ROOT / "Demand Elasticity"
-OLD_RESULTS = ROOT / "results"
-NEW_RESULTS = ROOT / "results_paperspecific"
+ROOT = Path(__file__).resolve().parents[1]
+DATA_DIR = ROOT / "SWMIRPE_data"
+OLD_RESULTS = ROOT / "SWMIRPE_results"
+NEW_RESULTS = ROOT / "SWMIRPE_results_paperspecific"
 PAPER_TEXT_DIR = NEW_RESULTS / "paper_text"
 RUN_LOG = NEW_RESULTS / "run_log.txt"
 

@@ -19,9 +19,9 @@ import statsmodels.api as sm
 from sklearn.linear_model import Ridge
 
 
-ROOT = Path("/Users/danie/Personal-Macro-Research")
-DATA_DIR = ROOT / "Demand Elasticity"
-RESULTS_DIR = ROOT / "results"
+ROOT = Path(__file__).resolve().parents[1]
+DATA_DIR = ROOT / "SWMIRPE_data"
+RESULTS_DIR = ROOT / "SWMIRPE_results"
 
 
 BASE_CATEGORIES = [
@@ -1173,7 +1173,7 @@ def write_final_report(
         # Average Elasticity Estimation Report
 
         ## Scope
-        This report estimates two objects for U.S. consumption categories using only local files in `Demand Elasticity`:
+        This report estimates two objects for U.S. consumption categories using only local files in `SWMIRPE_data`:
         1. Primary target: share-weighted mean Marshallian own-price elasticity
            \\( \\bar{{\\varepsilon}}^M = \\sum_i s_i \\varepsilon_{{ii}}^M \\)
         2. Secondary target: IO-linked realized own-price elasticity approximation
