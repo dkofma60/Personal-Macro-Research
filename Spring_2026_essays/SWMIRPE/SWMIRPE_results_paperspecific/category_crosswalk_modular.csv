@@ -1,0 +1,13 @@
+modular_category,cex_components,price_proxy
+food,FOODPQ,food_beverages price
+alcohol,ALCBEVPQ,food_beverages price
+apparel,APPARPQ,apparel price
+housing_core,HOUSPQ-UTILPQ,housing price
+utilities,UTILPQ,utilities_public_services price
+transport,TRANSPQ,transportation price
+medical,HEALTHPQ,medical_care price
+entertainment,ENTERTPQ+OTHENTPQ,recreation price
+education,EDUCAPQ,education_communication price
+personal_misc,PERSCAPQ+MISCPQ,other_goods_services price
+tobacco,TOBACCPQ,other_goods_services price
+leisure,imputed,leisure price

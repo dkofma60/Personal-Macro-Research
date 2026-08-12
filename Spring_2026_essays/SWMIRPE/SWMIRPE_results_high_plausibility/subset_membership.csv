@@ -1,0 +1,7 @@
+category,preferred_own_elasticity_aids_no_leisure,subset_A_market_only,subset_B_sign_stable,subset_C_high_credibility,price_mapping_quality,bridge_mapping_quality,sign_flip_across_models,reason
+non_durables,-0.9496213271731335,True,True,True,high,medium,False,market category; negative in preferred and at least one alternative model; high price/bridge plausibility with sign stability
+consumer_services,-0.7954308397373211,True,False,False,medium,medium,True,market category
+utilities_public_services,-0.9846327987661496,True,True,False,medium,medium,False,market category; negative in preferred and at least one alternative model
+housing,-0.9994475019325932,True,True,True,high,high,False,market category; negative in preferred and at least one alternative model; high price/bridge plausibility with sign stability
+transportation,-0.9189447534474482,True,True,True,high,high,False,market category; negative in preferred and at least one alternative model; high price/bridge plausibility with sign stability
+leisure,,False,False,False,low,low,True,excluded leisure from default target object; low price-construction quality

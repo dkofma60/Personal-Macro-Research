@@ -1,0 +1,37 @@
+[2026-03-14 16:45:31] Starting high-plausibility follow-up analysis.
+[2026-03-14 16:45:31] Loaded prerequisite: final_report_revised.md
+[2026-03-14 16:45:31] Loaded prerequisite: final_summary_revised.csv
+[2026-03-14 16:45:31] Loaded prerequisite: weighted_mean_comparison.csv
+[2026-03-14 16:45:31] Loaded prerequisite: weighted_mean_decomposition.md
+[2026-03-14 16:45:31] Loaded prerequisite: credibility_ranking.csv
+[2026-03-14 16:45:31] Loaded prerequisite: robustness_summary_revised.csv
+[2026-03-14 16:45:31] Loaded prerequisite: top_tier_elasticities.csv
+[2026-03-14 16:45:31] Loaded prerequisite: ge_elasticities_top_tier.csv
+[2026-03-14 16:45:31] Loaded prerequisite: ge_elasticities_pads.csv
+[2026-03-14 16:45:31] Loaded prerequisite: js_elasticities.csv
+[2026-03-14 16:45:31] Loaded prerequisite: eight_cat_revised_elasticities.csv
+[2026-03-14 16:45:31] Found optional input: top_tier_quaids_results.csv
+[2026-03-14 16:45:31] Found optional input: top_tier_aids_results.csv
+[2026-03-14 16:45:31] Found optional input: top_tier_les_results.csv
+[2026-03-14 16:45:31] Found optional input: js_rank2_results.csv
+[2026-03-14 16:45:31] Found optional input: js_rank3_results.csv
+[2026-03-14 16:45:31] Found optional input: pads_grouped_results.csv
+[2026-03-14 16:45:31] Found optional input: price_construction_notes.md
+[2026-03-14 16:45:31] Found optional input: bridge_documentation.md
+[2026-03-14 16:45:31] Found optional input: elasticity_pipeline_paperspecific.py
+[2026-03-14 16:45:31] Reading baseline outputs.
+[2026-03-14 16:45:31] Importing paper-specific pipeline module for targeted re-estimation.
+[2026-03-14 16:45:33] Building reduced model datasets (no full rerun).
+[2026-03-14 16:45:33] Re-estimating targeted models for high-plausibility designs.
+[2026-03-14 16:45:52] Computing realized (IO-linked) elasticities for targeted variants.
+[2026-03-14 16:45:52] Building leisure diagnostics.
+[2026-03-14 16:45:52] Defining high-plausibility subsets.
+[2026-03-14 16:45:52] Recomputing weighted means under leisure-neutral designs.
+[2026-03-14 16:45:52] Writing model downgrade notes.
+[2026-03-14 16:45:52] Building realized high-plausibility table with confidence flags.
+[2026-03-14 16:45:52] Decomposing leisure removal effects.
+[2026-03-14 16:45:52] Applying plausibility flags.
+[2026-03-14 16:45:52] Selecting preferred high-plausibility headline estimate.
+[2026-03-14 16:45:52] Checking for duplicate files across output locations.
+[2026-03-14 16:45:52] No removable duplicate files detected across output locations.
+[2026-03-14 16:45:52] High-plausibility follow-up completed successfully.

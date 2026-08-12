@@ -1,0 +1,8 @@
+scenario,weighted_mean_marshallian,notes
+baseline_8cat_regional,-0.41747253584863553,"Unregularized WLS, regional CPI (with apparel national fallback), no RPP."
+alternative_7cat_grouping,-1.4349651687814091,Merged education/communication with other goods/services.
+national_only_prices,-0.4623016982319069,All households assigned national CPI prices.
+regional_plus_rpp,-0.27109541490138334,Regional CPI plus state-year RPP multipliers.
+regularized_ridge,-0.4202787089713824,Ridge (alpha=5) share-equation estimation.
+exclude_housing,-1.2184884433472696,Demand system re-estimated without housing category.
+pce_inferred_shares_weighting,-3.176215981752765,Uses inferred PCE-style shares from IO mapping instead of CEX shares.

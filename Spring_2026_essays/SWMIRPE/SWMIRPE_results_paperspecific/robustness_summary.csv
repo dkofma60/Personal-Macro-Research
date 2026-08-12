@@ -1,0 +1,16 @@
+scenario,type,estimate
+1_shojaeddini_quaids_with_leisure,marshallian,1.3798298947272085
+2_shojaeddini_aids_with_leisure,marshallian,-0.8216761046870233
+3_shojaeddini_les_with_leisure,marshallian,-0.9934380229376003
+4a_quaids_without_leisure,marshallian,-0.9399611809337999
+4b_aids_without_leisure,marshallian,-0.9419539392448899
+4c_les_without_leisure,marshallian,-0.9968369176363051
+5_eight_category_revised,marshallian,-1.0077503183518997
+6a_js_rank2,marshallian,-0.8216761046870233
+6b_js_rank3,marshallian,1.3798298947272085
+7_ge1_top_tier,realized_ge,-0.8267745800704022
+8_ge2_pads,realized_ge,-1.0306359086704635
+9_without_rpp_enhancement,marshallian,-0.9470228334574968
+10_without_service_flow_adjustment,marshallian,-0.14895126810917697
+11_without_housing,marshallian,-1.017464611010763
+12_pce_style_shares,marshallian,-0.17448427299456948

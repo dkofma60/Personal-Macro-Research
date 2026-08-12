@@ -1,7 +1,0 @@
-category,flag_type,severity,model_or_variant,detail
-leisure,positive_own_price_dominant_share,high,top_tier_quaids,"share=0.748, eps=2.011"
-leisure,weak_price_support,high,all_top_tier_blocks,price uses instrumented wage proxy; expenditure is imputed leisure hours times wage.
-utilities_public_services,fallback_price_mapping,medium,top_tier_blocks,price constructed using housing CPI with utility-vs-housing RPP ratio fallback.
-consumer_services,poor_bridge_quality,medium,top_tier_bridge,bridge concentration/coverage is weak.
-consumer_services,sign_flip_across_models,medium,top_tier/js,"[1.356385194299925, 1.260985173265894, -1.0000000000021103, 1.260985173265894, 1.356385194299925]"
-leisure,sign_flip_across_models,high,top_tier/js,"[2.011184053611892, -0.9319291915588224, -0.9999999999976694, -0.9319291915588224, 2.011184053611892]"

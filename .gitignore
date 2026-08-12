@@ -1,5 +1,15 @@
+**/.DS_Store
 **/__pycache__/
-SQL database: Deposit Turnover by Type, 1977–1996/g6_extraction_output/**/*_cache*/
-SQL database: Deposit Turnover by Type, 1977–1996/g6_extraction_output/ocr_raw.jsonl
-SQL database: Deposit Turnover by Type, 1977–1996/g6_extraction_output/ocr_raw_chunks/
-SQL database: Deposit Turnover by Type, 1977–1996/g6_extraction_output/manual_review_queue.csv
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+**/.ipynb_checkpoints/
+**/*_cache*/
+**/*.pyc
+**/processed_versions/tmp_*.png
+
+.venv/
+
+SQL_database/OCR_pipeline/g6_*traction_output*/ocr_raw.jsonl
+SQL_database/OCR_pipeline/g6_*traction_output*/ocr_raw_chunks/
+SQL_database/OCR_pipeline/g6_*traction_output*/manual_review_queue.csv

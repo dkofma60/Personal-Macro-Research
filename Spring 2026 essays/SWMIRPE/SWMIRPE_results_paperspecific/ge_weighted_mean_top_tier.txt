@@ -1,1 +1,0 @@
-weighted_mean_ge_top_tier=-0.826775

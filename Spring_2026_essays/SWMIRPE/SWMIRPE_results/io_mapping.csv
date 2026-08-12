@@ -1,0 +1,25 @@
+category,io_code,io_name,mapping_weight,sector_pce_value
+food_beverages,11,"Agriculture, forestry, fishing, and hunting",0.03223554491014151,161984.0
+food_beverages,31G,Manufacturing,0.7292965668539697,3664724.0
+food_beverages,42,Wholesale trade,0.0,0.0
+food_beverages,44RT,Retail trade,0.0011888528823413755,5974.0
+food_beverages,7,"Arts, entertainment, recreation, accommodation, and food services",0.2372790353535474,1192330.0
+housing,22,Utilities,0.06512344936865706,265417.0
+housing,23,Construction,0.0,0.0
+housing,FIRE,"Finance, insurance, real estate, rental, and leasing",0.7843931123727119,3196871.0
+housing,81,"Other services, except government",0.150483438258631,613310.0
+apparel,31G,Manufacturing,0.9983725166167307,3664724.0
+apparel,42,Wholesale trade,0.0,0.0
+apparel,44RT,Retail trade,0.00162748338326934,5974.0
+transportation,21,Mining,0.001410210940534698,334.0
+transportation,44RT,Retail trade,0.025223353768725407,5974.0
+transportation,48TW,Transportation and warehousing,0.9733664352907399,230536.0
+medical_care,6,"Educational services, health care, and social assistance",1.0,2917172.0
+recreation,7,"Arts, entertainment, recreation, accommodation, and food services",0.6749502560081968,1192330.0
+recreation,51,Information,0.3250497439918032,574215.0
+education_communication,51,Information,0.15268776088795905,574215.0
+education_communication,6,"Educational services, health care, and social assistance",0.7756963172418855,2917172.0
+education_communication,PROF,Professional and business services,0.0716159218701555,269327.0
+other_goods_services,81,"Other services, except government",0.15033920757110905,613310.0
+other_goods_services,FIRE,"Finance, insurance, real estate, rental, and leasing",0.7836413116483655,3196871.0
+other_goods_services,PROF,Professional and business services,0.0660194807805255,269327.0

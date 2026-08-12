@@ -1,6 +1,0 @@
-component,old_pipeline,new_pipeline,change_type,reason
-Demand hierarchy,Single LA/AIDS-like block,QUAIDS + AIDS + LES top-tier hierarchy; JS rank2/rank3 analogue,major_upgrade,Align with Shojaeddini and Jorgenson-Slesnick methods
-Leisure,No explicit leisure category,Instrumented after-tax wage leisure-price and leisure-expenditure imputation,major_upgrade,Full-consumption requirement
-Durables,No service-flow adjustment,Vehicle purchase to service-flow robustness treatment,upgrade,Shojaeddini/Slesnick durable-flow guidance
-IO realized elasticity,Ad hoc category-sector mapping and propagation,Documented bridge matrix D + IO price identity + GE-1/GE-2 variants,major_upgrade,Inforum/IdLIFT/Chao architecture
-Modular diagnostics,None,Döpper-inspired modular reduced-form category diagnostics,new_block,Assess heterogeneity without unsupported scanner-data claims

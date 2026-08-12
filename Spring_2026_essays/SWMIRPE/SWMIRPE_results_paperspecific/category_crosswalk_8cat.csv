@@ -1,0 +1,9 @@
+category,cex_components,cpi_item_code,rpp_proxy,io_candidate_sectors,notes
+food_beverages,FOODPQ + ALCBEVPQ,SAF,RPP goods (line 2),11|31G|42|44RT|7,CEX has separate food and alcohol aggregates; combined to match CPI food & beverages.
+housing,HOUSPQ,SAH,0.8*housing services (line 3) + 0.2*utilities (line 4),22|23|FIRE|81,Housing includes utilities and shelter-related outlays.
+apparel,APPARPQ,SA311,RPP goods (line 2),31G|42|44RT,Regional CPI is unavailable for this item in the provided metadata; national series is used as fallback.
+transportation,TRANSPQ,SAT,RPP goods (line 2),21|44RT|48TW,Aggregates vehicle-related goods and transport services.
+medical_care,HEALTHPQ,SAM,RPP other services (line 5),6,Direct mapping to medical-care CPI and BEA education/health sector.
+recreation,ENTERTPQ + OTHENTPQ,SAR,RPP other services (line 5),7|51,CEX entertainment aggregates are combined for recreation.
+education_communication,EDUCAPQ,SAE,RPP other services (line 5),51|6|PROF,CEX communication detail is limited in FMLI aggregate variables; education aggregate used as closest broad proxy.
+other_goods_services,PERSCAPQ + TOBACCPQ + MISCPQ,SAG,RPP other services (line 5),81|FIRE|PROF,Constructed as residual broad personal/miscellaneous category in FMLI aggregates.

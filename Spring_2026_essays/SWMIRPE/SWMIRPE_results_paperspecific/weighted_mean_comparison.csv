@@ -1,0 +1,13 @@
+model,object,weighted_mean,share_source
+top_tier_quaids,marshallian,1.3798298947272085,cex
+top_tier_aids,marshallian,-0.8216761046870233,cex
+top_tier_les,marshallian,-0.9934380229376003,cex
+top_tier_quaids_no_leisure,marshallian,-0.9399611809337999,cex
+top_tier_aids_no_leisure,marshallian,-0.9419539392448899,cex
+top_tier_les_no_leisure,marshallian,-0.9968369176363051,cex
+eight_cat_revised_aids,marshallian,-1.0077503183518997,cex
+js_rank2,marshallian,-0.8216761046870233,cex
+js_rank3,marshallian,1.3798298947272085,cex
+ge_top_tier,realized_ge,-0.8267745800704022,cex
+ge_pads,realized_ge,-1.0306359086704635,cex
+top_tier_quaids_pce_shares,marshallian,-0.17448427299456948,pce_inferred

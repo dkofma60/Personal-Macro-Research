@@ -1,7 +1,0 @@
-category,cex_components,price_construction,notes
-non_durables,food_beverages + apparel + other_goods_services,Geary aggregate of CPI food/apparel/other,Shojaeddini top-tier analogue.
-consumer_services,medical_care + recreation + education_communication,Geary aggregate of service CPI components,Top-tier service bundle.
-utilities_public_services,UTILPQ,Housing CPI adjusted by utility-vs-housing RPP ratio,Public-use utility price proxy.
-housing,HOUSPQ - UTILPQ,CPI housing,Separates utilities from housing service.
-transportation,TRANSPQ (with optional durable service-flow adjustment),CPI transportation,Service-flow robustness included.
-leisure,imputed leisure hours * instrumented after-tax hourly wage,instrumented wage index,Shojaeddini/Jorgenson full-consumption component.

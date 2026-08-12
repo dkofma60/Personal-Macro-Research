@@ -1,3 +1,0 @@
-weighted_mean_marshallian=-0.417473
-bootstrap_ci_95=[-2.360476,1.119723]
-identification_rank=weak
