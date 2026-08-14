@@ -43,6 +43,8 @@ FULL_CORPUS_TOTALS = {
     "unrelated_release_page": 1,
 }
 
+SQL_DATABASE_ROOT = Path(__file__).resolve().parents[1]
+
 EXPECTED_COLUMNS = {
     "g6_era": (
         "era_id",
@@ -175,6 +177,14 @@ IDENTITY_COLUMNS = {
 
 class LoaderError(RuntimeError):
     pass
+
+
+def project_relative_path(value: str) -> str:
+    resolved = Path(value).expanduser().resolve()
+    try:
+        return str(resolved.relative_to(SQL_DATABASE_ROOT))
+    except ValueError:
+        return str(resolved)
 
 
 @dataclass(frozen=True)
@@ -1385,7 +1395,12 @@ def main(argv: Sequence[str] | None = None) -> int:
         args = parse_arguments(argv)
         if args.load and not args.input_root:
             raise LoaderError("--input-root is required with --load")
-        input_root = str(Path(args.input_root).expanduser().resolve()) if args.input_root else None
+        input_root = project_relative_path(args.input_root) if args.input_root else None
+        cleanup_report_path = (
+            project_relative_path(args.cleanup_report_path)
+            if args.cleanup_report_path
+            else None
+        )
         files = resolve_jsonl_files(args.jsonl_dir, args.jsonl_files)
         eras = load_era_map(Path(args.era_map).expanduser().resolve())
         print("Pass 1: scanning artifact manifest and document registry")
@@ -1398,7 +1413,12 @@ def main(argv: Sequence[str] | None = None) -> int:
                     "use dry-run for partial inputs"
                 )
             print("Pass 2: loading pages, cells, and candidates")
-            counts = load_database(scan, args.run_label, input_root, args.cleanup_report_path)
+            counts = load_database(
+                scan,
+                args.run_label,
+                input_root,
+                cleanup_report_path,
+            )
             print_summary(scan, counts)
             print("Load and post-load validation completed; full_corpus_completed=true")
         else:

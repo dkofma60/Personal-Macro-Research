@@ -1,58 +1,50 @@
 # G.6 raw PostgreSQL loader
 
-Run these commands from the loader project directory:
-
-```bash
-cd "/Users/danie/Personal-Macro-Research/SQL database: Deposit Turnover by Type, 1977–1996"
-```
+Run these commands from `SQL_database/` after constructing the raw schema with
+`SQL_queries/01_construct_raw_schema.sql`.
 
 Install the PostgreSQL driver:
 
 ```bash
-python3 -m pip install -r requirements.txt
+python3 -m pip install -r OCR_to_SQL_loaders/requirements.txt
 ```
 
-Set the connection environment variables before a real load:
+Set `PGHOST`, `PGPORT`, `PGDATABASE`, `PGUSER`, and `PGPASSWORD` before a real
+load. The default dry-run parses and validates the five JSONL parts without
+opening a database connection:
 
 ```bash
-export PGHOST=localhost
-export PGPORT=5432
-export PGDATABASE=your_database
-export PGUSER=your_user
-export PGPASSWORD=your_password
+python3 OCR_to_SQL_loaders/load_g6_raw.py \
+  --jsonl-dir OCR_pipeline/g6_extraction_output_v2/ocr_raw_chunks \
+  --era-map OCR_pipeline/g6_era_map.csv \
+  --run-label date-reconciliation-v4-20260808
 ```
 
-Dry-run is the default and never opens a database connection:
+Load only after the dry-run succeeds:
 
 ```bash
-python3 load_g6_raw.py \
-  --jsonl-dir g6_extraction_output/ocr_raw_chunks \
-  --era-map g6_era_map.csv \
-  --input-root "/Users/danie/Personal-Macro-Research/SQL database: Deposit Turnover by Type, 1977–1996/fraser_g6_issues" \
-  --run-label cleanup-v3-20260724
-```
-
-Load only after a successful dry-run:
-
-```bash
-python3 load_g6_raw.py \
-  --jsonl-dir g6_extraction_output/ocr_raw_chunks \
-  --era-map g6_era_map.csv \
-  --input-root "/Users/danie/Personal-Macro-Research/SQL database: Deposit Turnover by Type, 1977–1996/fraser_g6_issues" \
-  --run-label cleanup-v3-20260724 \
-  --cleanup-report-path g6_extraction_output/cleanup_run_report.md \
+python3 OCR_to_SQL_loaders/load_g6_raw.py \
+  --jsonl-dir OCR_pipeline/g6_extraction_output_v2/ocr_raw_chunks \
+  --era-map OCR_pipeline/g6_era_map.csv \
+  --input-root OCR_pipeline/fraser_g6_issues \
+  --run-label date-reconciliation-v4-20260808 \
+  --cleanup-report-path OCR_pipeline/g6_extraction_output_v2/cleanup_run_report.md \
   --load
 ```
 
-To validate selected files without loading, repeat `--jsonl-file` and use `--dry-run`:
+For a validation-only check of selected parts, repeat `--jsonl-file` and keep
+dry-run mode:
 
 ```bash
-python3 load_g6_raw.py \
-  --jsonl-file g6_extraction_output/ocr_raw_chunks/ocr_raw.part_003.jsonl \
-  --era-map g6_era_map.csv \
-  --input-root "/Users/danie/Personal-Macro-Research/SQL database: Deposit Turnover by Type, 1977–1996/fraser_g6_issues" \
+python3 OCR_to_SQL_loaders/load_g6_raw.py \
+  --jsonl-file OCR_pipeline/g6_extraction_output_v2/ocr_raw_chunks/ocr_raw.part_003.jsonl \
+  --era-map OCR_pipeline/g6_era_map.csv \
   --run-label validation-only \
   --dry-run
 ```
 
-The loader verifies the live `raw` table columns before inserting anything, refuses nonempty raw extraction tables or a reused run label, validates each document transaction, and marks the extraction run complete only after all post-load checks pass. Oversized OCR and cache files are read in streaming mode and are never modified.
+Load mode requires the five canonical part names. The loader verifies the live
+raw schema, refuses nonempty extraction tables or a reused run label, validates
+each document transaction, and marks the extraction run complete only after
+all post-load checks pass. Paths inside this project are stored relative to the
+`SQL_database/` directory.

@@ -7,9 +7,13 @@
 **/*_cache*/
 **/*.pyc
 **/processed_versions/tmp_*.png
+**/.Rhistory
 
 .venv/
 
 SQL_database/OCR_pipeline/g6_*traction_output*/ocr_raw.jsonl
 SQL_database/OCR_pipeline/g6_*traction_output*/ocr_raw_chunks/
 SQL_database/OCR_pipeline/g6_*traction_output*/manual_review_queue.csv
+SQL_database/*.dump
+SQL_database/g6_turnover_full_database.sql
+SQL_database/g6_turnover_fully_populated_database.sql

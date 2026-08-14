@@ -33,28 +33,19 @@ except ImportError:
 
 ROOT = Path(__file__).resolve().parent
 PIPELINE_ROOT = ROOT
+PROJECT_ROOT = PIPELINE_ROOT.parent
 INPUT_ROOT = PIPELINE_ROOT / "fraser_g6_releases"
 if not INPUT_ROOT.exists() and (PIPELINE_ROOT / "fraser_g6_issues").exists():
     INPUT_ROOT = PIPELINE_ROOT / "fraser_g6_issues"
-ERA_MAP_PATH = next(
-    (
-        path
-        for path in (
-            PIPELINE_ROOT / "g6_era_map.csv",
-            Path.home() / "Downloads" / "g6_era_map.csv",
-        )
-        if path.exists()
-    ),
-    PIPELINE_ROOT / "g6_era_map.csv",
-)
-BASE_OUTPUT_DIR = PIPELINE_ROOT / "g6_extraction_output"
+ERA_MAP_PATH = PIPELINE_ROOT / "g6_era_map.csv"
 OUTPUT_DIR = Path(
     os.environ.get(
         "G6_OUTPUT_DIR",
         PIPELINE_ROOT / "g6_extraction_output_v2",
     )
 ).expanduser()
-CACHE_DIR = BASE_OUTPUT_DIR / "_cache"
+CACHE_DIR = OUTPUT_DIR / "_cache"
+BASELINE_METRICS_PATH = PIPELINE_ROOT / "g6_cleanup_baseline_metrics.json"
 OCR_CACHE_VERSION = "cleanup-v3-20260724"
 PIPELINE_VERSION = "date-reconciliation-v4-20260808"
 RENDER_DPI = 240
@@ -361,6 +352,14 @@ ERA3_RIGHT_SHIFTED_EDGES = [
     0.776,
     0.905,
 ]
+
+
+def project_relative_path(path):
+    resolved = Path(path).expanduser().resolve()
+    try:
+        return str(resolved.relative_to(PROJECT_ROOT))
+    except ValueError:
+        return str(resolved)
 
 
 def executable(name):
@@ -727,11 +726,11 @@ def render_and_ocr(pdf_path):
         page.update(
             {
                 "page_number": page_number,
-                "pdf_path": str(pdf_path.resolve()),
+                "pdf_path": project_relative_path(pdf_path),
                 "pdf_sha": pdf_sha,
-                "cache_dir": str(cache),
-                "source_rendered_image": str(rendered_path),
-                "processed_image": str(processed_path),
+                "cache_dir": project_relative_path(cache),
+                "source_rendered_image": project_relative_path(rendered_path),
+                "processed_image": project_relative_path(processed_path),
                 "width": image.width,
                 "height": image.height,
                 "deskew_angle": angle,
@@ -4559,7 +4558,7 @@ def targeted_cell_candidates(
             if candidate.get("source") == source:
                 candidate.setdefault(
                     "rendered_page_path",
-                    str(rendered_path),
+                    project_relative_path(rendered_path),
                 )
                 candidate.setdefault(
                     "high_resolution_deskew_angle",
@@ -4632,7 +4631,7 @@ def targeted_cell_candidates(
                         prefix_pass["raw"],
                         digit_pass["raw"],
                     ],
-                    "rendered_page_path": str(rendered_path),
+                    "rendered_page_path": project_relative_path(rendered_path),
                     "high_resolution_deskew_angle": (
                         high_resolution_angle
                     ),
@@ -8030,7 +8029,7 @@ def diagnostic_assertions(rows, metadata, issues, raw_pages, manifest, paths):
             assertion_record(
                 f"{filename}: diagnostic path recorded",
                 "existing corpus path or explicit fallback path",
-                str(paths[filename].resolve()),
+                project_relative_path(paths[filename]),
                 paths[filename].exists(),
             )
         )
@@ -8795,16 +8794,16 @@ def cleanup_report(
         "# G.6 extraction cleanup run",
         "",
         f"- Pipeline version: `{PIPELINE_VERSION}`",
-        f"- Resolved input root: `{INPUT_ROOT.resolve()}`",
-        f"- Era map: `{ERA_MAP_PATH.resolve()}`",
-        f"- Baseline metrics: `{(BASE_OUTPUT_DIR / '_cleanup_baseline_metrics.json').resolve()}`",
+        f"- Input root: `{project_relative_path(INPUT_ROOT)}`",
+        f"- Era map: `{project_relative_path(ERA_MAP_PATH)}`",
+        f"- Baseline metrics: `{project_relative_path(BASELINE_METRICS_PATH)}`",
         f"- Full corpus run completed: `{'yes' if full_run_completed else 'no'}`",
         "",
         "## Diagnostic paths",
         "",
     ]
     lines.extend(
-        f"- `{filename}`: `{path.resolve()}`"
+        f"- `{filename}`: `{project_relative_path(path)}`"
         for filename, path in sorted(paths.items())
     )
     lines.extend(
@@ -9142,7 +9141,7 @@ def main():
         ),
         encoding="utf-8",
     )
-    baseline_path = BASE_OUTPUT_DIR / "_cleanup_baseline_metrics.json"
+    baseline_path = BASELINE_METRICS_PATH
     if not baseline_path.exists():
         raise FileNotFoundError(
             "The pre-cleanup baseline metrics file is missing; refusing to replace outputs."
@@ -9153,8 +9152,8 @@ def main():
         paths[filename] for filename in DIAGNOSTIC_SPECS
     ]
     print(f"Pipeline version: {PIPELINE_VERSION}")
-    print(f"Era map: {ERA_MAP_PATH.resolve()}")
-    print(f"Resolved input root: {INPUT_ROOT.resolve()}")
+    print(f"Era map: {project_relative_path(ERA_MAP_PATH)}")
+    print(f"Input root: {project_relative_path(INPUT_ROOT)}")
     print(f"Diagnostic releases: {len(ordered_diagnostics)}")
     diagnostic_result = process(ordered_diagnostics)
     diagnostic_rows, diagnostic_metadata, diagnostic_issues, diagnostic_raw, diagnostic_manifest = diagnostic_result
@@ -9214,7 +9213,7 @@ def main():
     )
     if not full_paths:
         raise FileNotFoundError(
-            f"No PDFs found recursively under {INPUT_ROOT.resolve()}."
+            f"No PDFs found recursively under {project_relative_path(INPUT_ROOT)}."
         )
     print(f"\nFULL CORPUS: {len(full_paths)} releases")
     full_rows, full_metadata, full_issues, full_raw, full_manifest = process(
@@ -9285,7 +9284,7 @@ def main():
         f"{len(full_manifest):,} page-manifest rows, and "
         f"{len(full_issues):,} issues, plus "
         f"{len(review_queue):,} manual-review cells to "
-        f"{OUTPUT_DIR.resolve()}."
+        f"{project_relative_path(OUTPUT_DIR)}."
     )
 
 
